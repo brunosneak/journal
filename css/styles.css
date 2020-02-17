@@ -124,6 +124,12 @@ hr{
     margin-right: 1rem;
 }
 
+.underline{
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+}
+
 /* generic */
 
 .articleAuthor{
@@ -252,4 +258,51 @@ nav{
     margin-right: 1rem;
     outline: 0;
     padding: 1rem 0;
+}
+
+/* content */
+
+.content{
+    display: flex;
+    margin: 3rem 0;
+}
+
+.articles{
+    flex: auto;
+}
+
+.articles article{
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+        "h3 img"
+        "content img"
+        "author img"
+        "details img"
+    ;
+}
+
+.articles article img{
+    grid-area: img;
+}
+
+.articles article h3{
+    grid-area: h3;
+}
+
+.articles article p:first-child{
+    grid-area: content;
+}
+
+.articles article .articleAuthor{
+    grid-area: author;
+}
+
+.articles article .textHint{
+    grid-area: details;
+}
+
+.popular{
+    flex: 350px;
 }
