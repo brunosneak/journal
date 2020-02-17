@@ -24,19 +24,18 @@
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Cormorant Garamond', sans-serif;
     font-size: 1.6rem;
     line-height: 2rem;
+    color: var(--dark);
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: 'Staatliches', cursive;
     margin: 1rem 0;
 }
 
 h3{
     font-size: 1.8rem;
-    font-weight: 400;
 }
 
 p{
@@ -58,11 +57,21 @@ img{
     max-width: 100%;
 }
 
+hr{
+    border: 0;
+    border-bottom: 1px solid var(--gray);
+}
+
+::placeholder{
+    color: var(--dark);
+}
+
 /* utility */
 
 .container{
     margin: auto;
     max-width: 1100px;
+    padding: 0 1rem;
 }
 
 .textPrimary{
@@ -96,6 +105,23 @@ img{
 .btn-light:hover{
     background-color: var(--primary);
     color: #fff;
+}
+
+.btnDark{
+    border: 1px solid var(--dark);
+    background-color: var(--dark);
+    color: #fff;
+}
+
+.btnDark:hover{
+    border: 1px solid var(--dark);
+    background-color: #fff;
+    color: var(--dark);
+}
+
+.mx1{
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /* generic */
@@ -183,4 +209,47 @@ nav{
 
 .articleSmall .articleContent, .articleSmall .articleAuthor, .articleSmall .textHint{
     grid-column: span 2;
+}
+
+/* ads */
+
+.ads{
+    background-color: var(--gray-light);
+    display: grid;
+    grid-template-columns: 200px 1fr auto 1fr;
+    grid-template-rows: 1fr auto auto auto 1fr;
+    grid-template-areas: 
+        "img . . ."
+        "img . h1 ."
+        "img . p ."
+        "img . form ."
+        "img . . ."
+    ;
+    margin: 2rem 0;
+}
+
+.ads img{
+    grid-area: img;
+}
+
+.ads h1{
+    font-size: 4rem;
+    grid-area: h1;
+}
+
+.ads p{
+    grid-area: p;
+}
+
+.ads form{
+    grid-area: form;
+}
+
+.ads form input{
+    background-color: var(--gray-light);
+    border: 0;
+    border-bottom: 1px solid var(--dark);
+    margin-right: 1rem;
+    outline: 0;
+    padding: 1rem 0;
 }
