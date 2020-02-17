@@ -26,10 +26,21 @@
 body{
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
+    line-height: 2rem;
 }
 
 h1, h2, h3, h4, h5, h6{
     font-family: 'Staatliches', cursive;
+    margin: 1rem 0;
+}
+
+h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+p{
+    margin: 1rem 0;
 }
 
 a{
@@ -41,6 +52,10 @@ a{
 ul{
     align-items: center;
     list-style-type: none;
+}
+
+img{
+    max-width: 100%;
 }
 
 /* utility */
@@ -56,6 +71,11 @@ ul{
 
 .textPrimary:hover{
     opacity: 0.8;
+}
+
+.textHint{
+    color: var(--gray-hint);
+    font-size: 1.2rem;
 }
 
 .btn{
@@ -76,6 +96,13 @@ ul{
 .btn-light:hover{
     background-color: var(--primary);
     color: #fff;
+}
+
+/* generic */
+
+.articleAuthor{
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 /* header */
@@ -109,9 +136,51 @@ header ul li{
 /* nav */
 
 nav{
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 1rem;
     position: sticky;
     top: 0;
+}
+
+/* showcase */
+
+.showcase{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    padding: 2rem 0;
+}
+
+.showcase article:first-child{
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+
+.showcase article:last-child{
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;
+}
+
+.articleSmall{
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-template-rows: 80px;
+    grid-auto-rows: auto    ;
+}
+
+.articleSmall p{
+    margin: 0.5rem 0;
+}
+
+.articleSmall .articleContent{
+    max-height: 6rem;
+    overflow: hidden;
+}
+
+.articleSmall .articleContent, .articleSmall .articleAuthor, .articleSmall .textHint{
+    grid-column: span 2;
 }
